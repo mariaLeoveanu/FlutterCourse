@@ -47,7 +47,10 @@ class MyHomePageState extends State<MyHomePage> {
               decoration: const BoxDecoration(
                   image: DecorationImage(
                 image: NetworkImage(
-                    'https://media.gettyimages.com/vectors/money-banknotes-and-coins-drawing-vector-id499480988?k=6&m=499480988&s=612x612&w=0&h=9ZxQo_3biW-SuGv0vc8yHJ09EyrmwXC8V2EovbDGzQs='),
+                    'https://media.gettyimages.com/vectors/money-banknotes-and-'
+                        'coins-drawing-vector-id499480988?k=6&m=499480988&s='
+                        '612x612&w=0&h=9ZxQo_3biW-SuGv0vc8yHJ09E'
+                        'yrmwXC8V2EovbDGzQs='),
               )),
             ),
             Container(
