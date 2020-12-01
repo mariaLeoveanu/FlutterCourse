@@ -6,16 +6,16 @@ class Movie {
   // param optional name
   const Movie({this.title, this.year, this.summary, this.genres});
 
-  final String title;
-  final int year;
-  final String summary;
-  final List<String> genres;
-
   Movie.fromJson(dynamic movie)
       : title = movie['title'],
         year = movie['year'],
         summary = movie['summary'],
         genres = List<String>.from(movie['genres']);
+
+  final String title;
+  final int year;
+  final String summary;
+  final List<String> genres;
 
   @override
   String toString() {

@@ -151,22 +151,22 @@ class MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              if(showInputField)
-              RaisedButton(
-                elevation: 10,
-                onPressed: () {
-                  fieldController.clear();
-                  setState(() {
-                    checkNumber();
-                  });
-                },
-                child: const Text('TRY'),
-              ),
+              if (showInputField)
+                RaisedButton(
+                  elevation: 10,
+                  onPressed: () {
+                    fieldController.clear();
+                    setState(() {
+                      checkNumber();
+                    });
+                  },
+                  child: const Text('TRY'),
+                ),
               if (!showInputField)
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 200, 0, 0),
-                child: Column(
-                  children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 200, 0, 0),
+                  child: Column(
+                    children: <Widget>[
                       RaisedButton(
                           child: const Text('Play again'),
                           onPressed: () {
@@ -175,9 +175,9 @@ class MyHomePageState extends State<MyHomePage> {
                               showInputField = true;
                             });
                           }),
-                  ],
-                ),
-              )
+                    ],
+                  ),
+                )
             ],
           ),
         ));
