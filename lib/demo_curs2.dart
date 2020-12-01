@@ -19,13 +19,7 @@ class Movie {
 
   @override
   String toString() {
-    return 'Title: ' +
-        title +
-        ' year: ' +
-        year.toString() +
-        '\n' +
-        summary +
-        genres.toString();
+    return 'Title: ' + title + ' year: ' + year.toString() + '\n' + summary + genres.toString();
   }
 }
 
@@ -47,11 +41,9 @@ Future<void> main() async {
 //    print(movies[i]['title']);
 //  }
 
-  final http.Response response =
-      await http.get('https://yts.mx/api/v2/list_movies.json');
+  final http.Response response = await http.get('https://yts.mx/api/v2/list_movies.json');
   final Map<String, dynamic> map = jsonDecode(response.body)['data'];
   final List<dynamic> movies = map['movies'];
-  final List<Movie> convertedMovies =
-      movies.map((dynamic movie) => Movie.fromJson(movie)).toList();
+  final List<Movie> convertedMovies = movies.map((dynamic movie) => Movie.fromJson(movie)).toList();
   print(convertedMovies);
 }

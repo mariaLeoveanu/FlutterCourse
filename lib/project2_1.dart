@@ -129,13 +129,10 @@ class MyHomePageState extends State<MyHomePage> {
                             child: TextField(
                               controller: fieldController,
                               keyboardType: TextInputType.number,
-                              decoration: InputDecoration(
-                                  hintText: 'Enter your guess',
-                                  errorText: errorMessage),
+                              decoration: InputDecoration(hintText: 'Enter your guess', errorText: errorMessage),
                               onChanged: (String number) {
                                 setState(() {
-                                  if (double.tryParse(number) == null &&
-                                      number.isNotEmpty) {
+                                  if (double.tryParse(number) == null && number.isNotEmpty) {
                                     errorMessage = 'Enter digits only';
                                   } else {
                                     errorMessage = null;

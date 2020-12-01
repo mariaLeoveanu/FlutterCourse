@@ -28,8 +28,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
-  final String displayMessage =
-      'Enter a number to see if it is either a perfect square, or a perfect cube';
+  final String displayMessage = 'Enter a number to see if it is either a perfect square, or a perfect cube';
   String errorMessage;
   int number;
   TextEditingController controller = TextEditingController();
@@ -53,8 +52,7 @@ class MyHomePageState extends State<MyHomePage> {
     }
 
     if (answer.isEmpty) {
-      answer =
-          'The given number is neither a perfect square nor a perfect cube.';
+      answer = 'The given number is neither a perfect square nor a perfect cube.';
     }
 
     showResult(answer);
@@ -107,8 +105,7 @@ class MyHomePageState extends State<MyHomePage> {
                     }
                   });
                 },
-                decoration: InputDecoration(
-                    hintText: 'Enter a number', errorText: errorMessage),
+                decoration: InputDecoration(hintText: 'Enter a number', errorText: errorMessage),
               ),
             ),
             RaisedButton(

@@ -46,11 +46,10 @@ class MyHomePageState extends State<MyHomePage> {
               width: 300,
               decoration: const BoxDecoration(
                   image: DecorationImage(
-                image: NetworkImage(
-                    'https://media.gettyimages.com/vectors/money-banknotes-and-'
-                        'coins-drawing-vector-id499480988?k=6&m=499480988&s='
-                        '612x612&w=0&h=9ZxQo_3biW-SuGv0vc8yHJ09E'
-                        'yrmwXC8V2EovbDGzQs='),
+                image: NetworkImage('https://media.gettyimages.com/vectors/money-banknotes-and-'
+                    'coins-drawing-vector-id499480988?k=6&m=499480988&s='
+                    '612x612&w=0&h=9ZxQo_3biW-SuGv0vc8yHJ09E'
+                    'yrmwXC8V2EovbDGzQs='),
               )),
             ),
             Container(
@@ -58,10 +57,8 @@ class MyHomePageState extends State<MyHomePage> {
               child: const Text('Enter the value you want to convert'),
             ),
             TextField(
-              decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.all(10.0),
-                  errorText: errorMessage,
-                  hintText: 'LEI'),
+              decoration:
+                  InputDecoration(contentPadding: const EdgeInsets.all(10.0), errorText: errorMessage, hintText: 'LEI'),
               keyboardType: const TextInputType.numberWithOptions(),
               onChanged: (String message) {
                 setState(() {
@@ -84,9 +81,7 @@ class MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               alignment: Alignment.center,
-              child: Text('The converted value is ' +
-                  convertedValue.toString() +
-                  ' EUR.'),
+              child: Text('The converted value is ' + convertedValue.toString() + ' EUR.'),
             )
           ],
         ),
