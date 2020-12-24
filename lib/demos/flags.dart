@@ -67,7 +67,7 @@ class MyHomePageState extends State<MyHomePage> {
                 mainAxisSpacing: 4,
                 children: List<Widget>.generate(countries.length, (int i) {
                   return Container(
-                    child: Column(children: <Widget>[const Text('bla'), Expanded(child: Image.network(flags[i]))]),
+                    child: Column(children: <Widget>[Text(countries[i]), Expanded(child: Image.network(flags[i]))]),
                   );
                 }))));
   }

@@ -8,6 +8,7 @@ class MovieListContainer extends StatelessWidget {
   const MovieListContainer(this.store);
 
   final Store<AppState> store;
+
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, MovieListModel>(
@@ -27,9 +28,7 @@ class MovieListContainer extends StatelessWidget {
             mainAxisSpacing: 5,
             children: List<Widget>.generate(model.movies.length, (int index) {
               return Container(
-                decoration: const BoxDecoration(
-                    color: Colors.blueAccent
-                ),
+                decoration: const BoxDecoration(color: Colors.blueAccent),
                 child: Column(
                   children: <Widget>[
                     Expanded(child: Image.network(model.movies[index].coverImageUrl)),

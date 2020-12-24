@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 
 class Movie {
@@ -21,9 +19,7 @@ class AppState {
   AppState({@required this.movies, this.currentPage, this.quality, this.isLoading});
 
   static AppState initialState() {
-    return AppState(movies: List<Movie>.unmodifiable(<Movie>[]),
-        currentPage: 0,
-        isLoading: false);
+    return AppState(movies: List<Movie>.unmodifiable(<Movie>[]), currentPage: 0, isLoading: false);
   }
 
   AppState copyWith({List<Movie> movies, int currentPage, String quality, bool isLoading}) {

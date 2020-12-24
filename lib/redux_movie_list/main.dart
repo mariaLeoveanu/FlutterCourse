@@ -40,7 +40,6 @@ class MyHomePage extends StatelessWidget {
   const MyHomePage(this.store);
 
   final Store<AppState> store;
-  
 
   @override
   Widget build(BuildContext context) {
