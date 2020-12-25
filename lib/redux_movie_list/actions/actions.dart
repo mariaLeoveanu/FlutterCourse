@@ -19,3 +19,19 @@ class UpdateQuality {
 
   String quality;
 }
+
+class UpdateGenre {
+  UpdateGenre(this.genre);
+
+  String genre;
+}
+
+class UpdateSortType {
+  UpdateSortType(this.sortType);
+
+  String sortType;
+}
+
+class ReceiveEmptyList {
+  ReceiveEmptyList();
+}

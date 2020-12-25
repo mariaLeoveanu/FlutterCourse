@@ -17,7 +17,7 @@ class QualityContainer extends StatelessWidget {
       builder: (BuildContext context, QualityModel model) {
         return DropdownButton<String>(
             value: store.state.quality,
-            items: <String>['720p', '1080p', '2160p', '3D']
+            items: <String>['All', '720p', '1080p', '2160p', '3D']
                 .map((String value) => DropdownMenuItem<String>(child: Text(value), value: value))
                 .toList(),
             onChanged: (String selectedValue) {

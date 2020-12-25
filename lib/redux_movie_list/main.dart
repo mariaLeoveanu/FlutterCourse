@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project1/redux_movie_list/actions/actions.dart';
+import 'package:project1/redux_movie_list/components/genres_components.dart';
 import 'package:project1/redux_movie_list/components/quality_component.dart';
 import 'package:project1/redux_movie_list/model/model.dart';
 import 'package:project1/redux_movie_list/middleware/middleware.dart';
@@ -46,12 +47,25 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(store.state.currentPage.toString()),
+          actions: <Widget>[
+            StoreConnector<AppState, MovieListModel>(
+              converter: (Store<AppState> store) => MovieListModel.fromStore(store),
+              builder: (BuildContext buildContext, MovieListModel model) => IconButton(
+                  icon: Icon((store.state.sortType == 'asc') ? Icons.arrow_upward : Icons.arrow_downward),
+                  onPressed: () {
+                    print(store.state.sortType);
+                    store.dispatch(UpdateSortType((store.state.sortType == 'asc') ? 'desc' : 'asc'));
+                    store.dispatch(GetMoviesAction(store.state.currentPage));
+                  }),
+            )
+          ],
         ),
         body: StoreConnector<AppState, MovieListModel>(
           converter: (Store<AppState> store) => MovieListModel.fromStore(store),
           builder: (BuildContext buildContext, MovieListModel model) => Container(
               child: Column(
             children: <Widget>[
+              GenreContainer(store),
               QualityContainer(store),
               Expanded(child: MovieListContainer(store)),
               RaisedButton(
