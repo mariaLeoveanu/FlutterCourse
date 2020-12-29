@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:project1/redux_movie_list/model/model.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:project1/redux_movie_list/components/details_component.dart';
 
 class MovieListContainer extends StatelessWidget {
   const MovieListContainer(this.store);
@@ -27,18 +28,26 @@ class MovieListContainer extends StatelessWidget {
             crossAxisSpacing: 5,
             mainAxisSpacing: 5,
             children: List<Widget>.generate(model.movies.length, (int index) {
-              return Container(
-                decoration: const BoxDecoration(color: Colors.blueAccent),
-                child: Column(
-                  children: <Widget>[
-                    Expanded(child: Image.network(model.movies[index].coverImageUrl)),
-                    Container(
-                      alignment: Alignment.bottomLeft,
-                      child: Text(
-                        model.movies[index].title,
-                      ),
-                    )
-                  ],
+              return InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute<SecondRoute>(
+                          builder: (BuildContext context) => SecondRoute(movie: model.movies[index])));
+                },
+                child: Container(
+                  decoration: const BoxDecoration(color: Colors.blueAccent),
+                  child: Column(
+                    children: <Widget>[
+                      Expanded(child: Image.network(model.movies[index].coverImageUrl)),
+                      Container(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          model.movies[index].title,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               );
             }),

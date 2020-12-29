@@ -1,18 +1,18 @@
 class Movie {
-  Movie(this.title, this.coverImageUrl, this.rating);
+  Movie(this.title, this.coverImageUrl, this.rating, this.genres, this.synopsis);
 
   Movie.fromJson(Map<String, dynamic> json)
       : title = json['title'],
         coverImageUrl = json['large_cover_image'],
-        rating = json['rating'];
+        rating = json['rating'],
+        genres = json['genres'],
+        synopsis = json['synopsis'];
 
   final String title;
   final String coverImageUrl;
   final num rating;
-
-  Movie copyWith({String title, String coverImageUrl, num rating}) {
-    return Movie(title ?? this.title, coverImageUrl ?? this.coverImageUrl, rating ?? this.rating);
-  }
+  final List<dynamic> genres;
+  final String synopsis;
 }
 
 class AppState {
